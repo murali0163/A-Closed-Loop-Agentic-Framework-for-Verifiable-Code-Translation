@@ -110,14 +110,14 @@ Our work builds on research in AI debugging, code generation, and multi-agent sy
 ## Project Team & Supervision
 
 **Institution**: Vasireddy Venkatadri Institute of Technology (VVIT), Nambur, Guntur  
-**Department**: Department of Computer Science & Engineering - Artificial Intelligence & Machine Learning (CSE-AIML)  
+**Department**: Department of Artificial Intelligence & Machine Learning (AIML)  
 **Batch ID**: `AIML – B-14`
 
-| S. No. | Regd. No. | Student Name | Role / Focus |
-| :---: | :---: | :--- | :--- |
-| 1 | `23BQ1A6189` | **Mothukuri Keerthi Medha** | Team Lead & Problem Formulation |
-| 2 | `23BQ1A6186` | **Medam Venkata Ajay Kumar Reddy** | Literature Survey & Dataset Curation |
-| 3 | `23BQ1A6108` | **Karumuri Satya Sri** | Agent Architecture & Prompt Engineering |
-| 4 | `23BQ1A6129` | **Korada Vamsi** | Docker Sandbox & Compiler Error Parsing |
+| S. No. | Regd. No. | Student Name | 
+| :---: | :---: | :--- |
+| 1 | `23BQ1A6189` | **Mothukuri Keerthi Medha** | 
+| 2 | `23BQ1A6186` | **Medam Venkata Ajay Kumar Reddy** | 
+| 3 | `23BQ1A6108` | **Karumuri Satya Sri** |
+| 4 | `23BQ1A6129` | **Korada Vamsi** | 
 
 **Project Guide**: **Dr. D Murali Krishna Reddy**

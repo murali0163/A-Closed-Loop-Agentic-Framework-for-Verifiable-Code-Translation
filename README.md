@@ -1,4 +1,4 @@
-# 🤖 A Closed-Loop Agentic Framework for Verifiable Code Translation
+# A Closed-Loop Agentic Framework for Verifiable Code Translation
 
 > **Converting legacy Python code to fast, memory-safe Rust using AI agents that learn from compiler execution feedback.**
 
@@ -9,58 +9,58 @@
 
 ---
 
-## 💡 What is this project about?
+## What is this project about?
 
-Imagine asking an AI to translate a recipe from English to French. If it gets a word slightly wrong, you still get a decent meal. But translating **Python code into Rust** is like giving that recipe to a super strict head chef who will throw out the entire dish if a single comma is misplaced!
+Imagine asking an AI to translate a recipe from English to French. If it gets a word slightly wrong, you still get a decent meal. But translating **Python code into Rust** is like giving that recipe to a strict head chef who will throw out the entire dish if a single comma is misplaced!
 
 **Python** is flexible and forgiving, while **Rust** is extremely strict about memory safety (thanks to its famous *borrow checker*). 
 
 When standard AI models (like GPT-4 or Claude) translate code in one go (*one-shot*), they often generate code that fails to compile or contains hidden logic bugs. Because the AI never actually runs the code during generation, it has no way of knowing it made a mistake.
 
-### 🌟 Our Solution
+### Our Solution
 We built an **automated, multi-agent AI framework** that doesn't just guess—it **runs, tests, and self-corrects** the translated code inside a safe container until it compiles and passes all unit tests perfectly!
 
 ---
 
-## ⚙️ How It Works (The 4 Key Steps)
+## How It Works (The 4 Key Steps)
 
 ```mermaid
 flowchart TD
-    A[🐍 Source Python Script] --> B[🧪 Differential Test Generator]
-    A --> C[🤖 Translator Agent]
+    A[Source Python Script] --> B[Differential Test Generator]
+    A --> C[Translator Agent]
     
     B -->|Run tests on Python| D[Record Ground-Truth Output]
     D -->|Translate tests to Rust| E[Rust Test Suite]
     
-    C -->|Generate Rust Code| F[🐳 Docker Sandbox]
+    C -->|Generate Rust Code| F[Docker Sandbox]
     E --> F
     
     F -->|Compile & Run cargo test| G{Did it compile & pass?}
     
-    G -->|YES! 🎉| H[Verified Rust Code]
-    G -->|NO ❌ compiler error| I[🔍 Diagnostic Error Parser]
+    G -->|YES| H[Verified Rust Code]
+    G -->|NO Compiler Error| I[Diagnostic Error Parser]
     
-    I -->|Clean Error Trace| J[🛠️ Self-Correction Agent]
+    I -->|Clean Error Trace| J[Self-Correction Agent]
     J -->|Refined Code| F
 ```
 
-1. **🤖 Translator Agent**: Takes your source Python code and generates an initial Rust translation.
-2. **🧪 Differential Test Generator**: Writes unit tests and runs them on your original Python code *first* to make sure we know what the correct output looks like. Then it translates those tests to Rust (preventing the AI from writing biased tests).
-3. **🐳 Docker Sandbox**: Safely compiles and executes the Rust code using `rustc` and `cargo test` in an isolated container.
-4. **🔍 Error Parser & Self-Correction Agent**: If the compiler complains or tests fail, our error parser extracts the exact problem (like borrow checker errors) and hands it back to the AI agent to fix it. This loop repeats until the code passes!
+1. **Translator Agent**: Takes your source Python code and generates an initial Rust translation.
+2. **Differential Test Generator**: Writes unit tests and runs them on your original Python code *first* to make sure we know what the correct output looks like. Then it translates those tests to Rust (preventing the AI from writing biased tests).
+3. **Docker Sandbox**: Safely compiles and executes the Rust code using `rustc` and `cargo test` in an isolated container.
+4. **Diagnostic Error Parser & Self-Correction Agent**: If the compiler complains or tests fail, our error parser extracts the exact problem (like borrow checker errors) and hands it back to the AI agent to fix it. This loop repeats until the code passes!
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- 🔄 **Smart Feedback Loop**: Replaces blind AI guessing with iterative compiler-driven debugging.
-- 🎯 **No Test Bias**: Validates unit tests on original Python code first, preventing the AI from writing "fake" tests that pass buggy code.
-- 🛡️ **Safe & Sandboxed**: Uses Docker so AI-generated code never risks your local operating system.
-- 📊 **Empirical Proof**: Measures real success using compilation rates, test pass rates, and iteration counts.
+- **Smart Feedback Loop**: Replaces blind AI guessing with iterative compiler-driven debugging.
+- **No Test Bias**: Validates unit tests on original Python code first, preventing the AI from writing "fake" tests that pass buggy code.
+- **Safe & Sandboxed**: Uses Docker so AI-generated code never risks your local operating system.
+- **Empirical Proof**: Measures real success using compilation rates, test pass rates, and iteration counts.
 
 ---
 
-## 🛠️ Tech Stack & Tools
+## Tech Stack & Tools
 
 - **Languages**: Python 3.10+, Rust (`rustc`, `cargo`)
 - **AI Models**: OpenAI GPT-4o / DeepSeek-Coder / Ollama (Local Models)
@@ -70,7 +70,7 @@ flowchart TD
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 final project/
@@ -86,7 +86,7 @@ final project/
 
 ---
 
-## 📈 How We Measure Success
+## How We Measure Success
 
 We evaluate our system using three clear metrics:
 1. **Compilation Success Rate (CSR %)**: The percentage of translated Rust programs that compile without errors.
@@ -95,7 +95,7 @@ We evaluate our system using three clear metrics:
 
 ---
 
-## 📚 Key Literature & References
+## Key Literature & References
 
 Our work builds on research in AI debugging, code generation, and multi-agent systems:
 
@@ -107,7 +107,7 @@ Our work builds on research in AI debugging, code generation, and multi-agent sy
 
 ---
 
-## 👥 Project Team & Supervision
+## Project Team & Supervision
 
 **Institution**: Vasireddy Venkatadri Institute of Technology (VVIT), Nambur, Guntur  
 **Department**: Department of Computer Science & Engineering - Artificial Intelligence & Machine Learning (CSE-AIML)  

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131c">
+  <title>PyRust — Code Translator</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="PyRust home"><span class="brand-icon">λ</span><span>PyRust<span class="brand-dot">.</span></span></a>
+      <span class="connection"><span class="pulse"></span> Local engine</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow"><span></span> CLOSED-LOOP CODE TRANSLATION</p>
+      <h1>Python in.<br><span>Rust out.</span></h1>
+      <p class="intro">Translate Python into idiomatic Rust, then compile and verify it in a repair loop.</p>
+    </section>
+
+    <section class="workspace" aria-label="Code translation workspace">
+      <div class="editor-card">
+        <div class="card-head"><div><span class="language-dot python"></span><span class="language-name">Python</span></div><span class="file-label">source.py</span></div>
+        <textarea id="source" spellcheck="false" aria-label="Python source code" placeholder="Paste Python code here...">def fibonacci(n):
+    if n <= 0:
+        return 0
+    if n == 1:
+        return 1
+
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    return b</textarea>
+        <div class="editor-foot"><span id="source-count">0 lines</span><button class="text-button" id="clear-button" type="button">Clear</button></div>
+      </div>
+
+      <div class="translate-row"><span class="line"></span><button id="translate-button" class="translate-button" type="button"><span class="button-icon">✦</span><span>Translate to Rust</span><span class="arrow">→</span></button><span class="line"></span></div>
+
+      <div class="editor-card output-card">
+        <div class="card-head"><div><span class="language-dot rust"></span><span class="language-name">Rust</span></div><div class="output-actions"><span id="result-status" class="status-pill">READY</span><button id="copy-button" class="icon-button" title="Copy Rust code" aria-label="Copy Rust code" type="button">⧉</button></div></div>
+        <pre id="output" class="code-output" aria-live="polite"><code>// Your verified Rust translation will appear here.</code></pre>
+        <div class="editor-foot"><span id="result-meta">Ready when you are</span><span class="rust-mark">RUST</span></div>
+      </div>
+    </section>
+    <p class="note"><span>✧</span> Add a <code>GEMINI_API_KEY</code> for model-powered translations. The local demo fallback works without one.</p>
+    <footer><span>PYRUST TRANSLATION LAB</span><span>Built for verifiable code</span></footer>
+  </main>
+</body>
+</html>
